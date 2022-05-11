@@ -17,7 +17,7 @@ function App() {
       <h1 className="pt-5 text-primary">Articles About Tesla</h1>
       <Row xs={1} md={3} className="g-4 mx-3 my-3">
         {
-          news.length === 0 ?
+          news && news?.length === 0 ?
             <Spinner className="spinner" animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
             </Spinner>
