@@ -5,6 +5,7 @@ import NewsCard from './Components/NewsCard/NewsCard';
 
 function App() {
   const [news, setNews] = useState([]);
+  let i = 1
   useEffect(() => {
     fetch("https://newsapi.org/v2/everything?q=tesla&from=2022-04-11&sortBy=publishedAt&apiKey=2e5be4512d8341edb33d610f61f1c5ee")
       .then(res => res.json())
@@ -21,7 +22,7 @@ function App() {
               <span className="visually-hidden">Loading...</span>
             </Spinner>
             :
-            news.map(nw => <NewsCard key={nw.title} news={nw} />)
+            news.map(nw => <NewsCard key={i} i={i++} news={nw} />)
         }
       </Row>
     </div >
